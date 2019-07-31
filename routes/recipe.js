@@ -101,7 +101,7 @@ router.get('/search', function (req, res, next) {
                
                 console.log(queryParam);
 
-                collection.find({ "title": RegExp("[^ ]*\w*(?=-khichuri)") }).toArray(function (err, queryResult) {
+                collection.find({ "title": RegExp("[^ ]*\w*(?=-)") }).toArray(function (err, queryResult) {
                     if (err) {
                         res.status(400).send('something went wrong!');
                     }
