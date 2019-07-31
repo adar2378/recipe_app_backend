@@ -1,0 +1,19 @@
+{
+  "name": "samplesite",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "joi": "^14.3.1",
+    "kerberos": "~1.1.2",
+    "mongodb": "~3.3.0-beta2",
+    "morgan": "~1.9.1"
+  }
+}
