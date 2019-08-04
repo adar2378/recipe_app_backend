@@ -88,7 +88,7 @@ router.get('/search', function (req, res, next) {
         var MongoClient = mongodb.MongoClient;
 
         var url = 'mongodb://localhost:27017';
-
+        
         MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
             if (err) {
                 console.log('Unable to connect to mongodb server!', err);
@@ -100,8 +100,8 @@ router.get('/search', function (req, res, next) {
 
                
                 console.log(queryParam);
-
-                collection.find({ "title": RegExp("[^ ]*\w*(?=-)") }).toArray(function (err, queryResult) {
+                let exp = ".*"+queryParam+".*"; // regular expression for matching a string
+                collection.find({ "title": RegExp(exp) }).toArray(function (err, queryResult) {
                     if (err) {
                         res.status(400).send('something went wrong!');
                     }
